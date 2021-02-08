@@ -1,15 +1,15 @@
 class CountdownTimer {
   constructor({ selector, targetDate } = {}) {
-    this.selector = selector;
+    this.selector = document.querySelector(selector);
     this.targetDate = targetDate;
+    this.refs = {
+      days: document.querySelector("span[data-value=days]"),
+      hours: document.querySelector("span[data-value=hours]"),
+      mins: document.querySelector("span[data-value=mins]"),
+      secs: document.querySelector("span[data-value=secs]"),
+    };
+    this.start();
   }
-
-  refs = {
-    days: document.querySelector("span[data-value=days]"),
-    hours: document.querySelector("span[data-value=hours]"),
-    mins: document.querySelector("span[data-value=mins]"),
-    secs: document.querySelector("span[data-value=secs]"),
-  };
 
   start() {
     const targetValue = this.targetDate;
@@ -49,4 +49,4 @@ const newTargetDate = new CountdownTimer({
   targetDate: new Date("Jul 01, 2021"),
 });
 
-newTargetDate.start();
+// newTargetDate.start();
