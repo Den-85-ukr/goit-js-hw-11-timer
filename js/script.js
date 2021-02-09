@@ -1,6 +1,6 @@
 class CountdownTimer {
-  constructor({ selector, targetDate } = {}) {
-    this.selector = document.querySelector(selector);
+  constructor({ selector, targetDate }) {
+    this.selector = selector;
     this.targetDate = targetDate;
     this.refs = {
       days: document.querySelector("span[data-value=days]"),
